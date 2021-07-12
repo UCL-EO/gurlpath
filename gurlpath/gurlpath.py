@@ -33,7 +33,7 @@ interface to url data
 __author__    = "P. Lewis"
 __email__     = "p.lewis@ucl.ac.uk"
 __date__      = "28 Aug 2020"
-__copyright__ = "Copyright 2020 P. Lewis"
+__copyright__ = "Copyright 2020-2022 P. Lewis"
 __license__   = "MIT License"
 
 class URL(urlpath.URL,urllib.parse._NetlocResultMixinStr, PurePath):

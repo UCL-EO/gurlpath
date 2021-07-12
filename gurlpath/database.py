@@ -32,7 +32,7 @@ database for URL lookup and other things ...
 __author__    = "P. Lewis"
 __email__     = "p.lewis@ucl.ac.uk"
 __date__      = "28 Aug 2020"
-__copyright__ = "Copyright 2020 P. Lewis"
+__copyright__ = "Copyright 2020-2022 P. Lewis"
 __license__   = "GPLv3"
     
 class Database():
