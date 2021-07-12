@@ -8,7 +8,7 @@ from getpass import getpass
 import sys
 
 __author__ = "P Lewis"
-__copyright__ = "Copyright 2018 P Lewis"
+__copyright__ = "Copyright 2018-2022 P Lewis"
 __license__ = "GPLv3"
 __email__ = "p.lewis@ucl.ac.uk"
 
