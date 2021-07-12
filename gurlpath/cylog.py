@@ -186,7 +186,7 @@ class  Cylog():
         p.chmod(0o600)
         self.msg(f"--> done writing ciphers to file")
 
-    def login(self,site=None,force=False):
+    def login(self,site=None,force=False,destination_folder='.cylog'):
         '''
         Reads encrypted information from ~/{dest_path}/.cylog.npz
 
