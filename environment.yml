@@ -1,0 +1,32 @@
+name: gurlpath
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - git
+  - python
+  - numpy
+  - beautifulsoup4
+  - jupyter_console
+  - jupyter_contrib_nbextensions
+  - pandocfilters
+  - nbconvert
+  - jupyterlab
+  - pandoc
+  - ipykernel
+  - pip
+  - autopep8
+  - jupyter
+  - mkdocs
+  - pycodestyle
+  - sphinx
+  - fsspec
+  - pip:
+    - listfile
+    - nbsphinx
+    - mkdocs-jupyter
+    - urlpath
+    - mknotebooks
+    - mkdocs-material
+    - mkdocs-exclude
+    - mkdocs-git-revision-date-localized-plugin
