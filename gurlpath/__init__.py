@@ -22,8 +22,8 @@ import io
 import tempfile
 from argparse import Namespace
 
-from cylog import Cylog
-from database import Database,ginit
+#from cylog import Cylog
+#from database import Database,ginit
 
 '''
 class derived from urlpath to provide pathlib-like
@@ -35,3 +35,8 @@ __email__     = "p.lewis@ucl.ac.uk"
 __date__      = "12 July 2021"
 __copyright__ = "Copyright 2020-2022 P. Lewis"
 __license__   = "MIT License"
+
+try:
+    from gurlpath.sds import sds, get_sds
+except ModuleNotFoundError:
+    from sds import sds, get_sds
