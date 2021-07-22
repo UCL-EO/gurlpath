@@ -2,7 +2,9 @@
 # -*- coding: utf-8 -*-
 
 '''
-database for URL lookup and other things
+database cache
+written for UCL MSc remote sensing course
+but has other uses.
 
 This class loads / writes a yaml database file.
 It can be quite slow, so dont call unless you need to
@@ -17,6 +19,7 @@ __license__ = 'GPLv3'
 import yaml
 from pathlib import Path
 import os
+import numpy as np
 
 
 class CacheDatabase():
@@ -25,7 +28,7 @@ class CacheDatabase():
         """
         initialise database class.
 
-        :argument args:      str: filename(s) for database
+        :argument args:       str: filename(s) for database
         :param dbdir:         str: cache directory. Get dbdir from dbdir,
                               default '.'
         :param data:          Dict : dataset to be loaded
@@ -37,8 +40,18 @@ class CacheDatabase():
         self.db_logic(dbdir)
         self.files = []
         self.data = data or {}
+        self.resolve(*args)
+
+    def resolve(self,*files):
+        '''
+        For each file specified in files
+
+        :param args: str: filename(s) for database
+        :return:     list: list of readable files
+        '''
+
         # sort file names/locations
-        for f in args:
+        for f in files:
             self.files.append(self.locate_file(f))
         self.files = np.array(self.files)
 
@@ -71,6 +84,7 @@ class CacheDatabase():
         # check files are readable
         readable = np.array([self.readable(f) for f in self.files])
         self.files = self.files[readable]
+        return self.files
 
     def locate_file(self,filename):
         """

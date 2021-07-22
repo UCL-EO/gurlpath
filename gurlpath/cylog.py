@@ -26,7 +26,8 @@ class  Cylog():
 
     It is written as a utility to allow UCL MSc students to 
     show access to NASA Earthdata dataset download, without 
-    the need to expose (username, password) in a submitted report.
+    the need to expose (username, password) in a submitted report
+    but has many other uses.
 
     Stores (in a dictionary in ~/{dest_path}/.cylog.npz) an
     encrypted form of username and password (and key)
@@ -267,11 +268,17 @@ def earthdata(do_test=False,force=False):
         assert test_login(True)
 
 def main():
+    '''
+    Force creation of user/password entry for
+    test site
+
+    :return: None
+    '''
     site = "test site"
     print("round 1 : force re-entry")
     cy = Cylog(site,verbose=True).login(force=True)
 
-    print("round 1 : just get it")
+    print("This should conform to what you entered : ")
     cy = Cylog(site,verbose=True).login()
     print(f'result for {site}: {cy}')
 
